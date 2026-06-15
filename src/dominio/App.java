@@ -7,16 +7,8 @@ public class App {
 	public static void main(String[] args) throws FileNotFoundException {
 		Sistema.getInstance();
 		Sistema.getInstance().leerArchivo();
-		System.out.println("por rareza");
-		Sistema.getInstance().ordenarCartasPorRareza();
-		Sistema.getInstance().mostrarCartas();
-		System.out.println("por nombre");
-		Sistema.getInstance().ordenarCartasPorNombre();
-		Sistema.getInstance().mostrarCartas();
-		System.out.println("por poder");
-		Sistema.getInstance().ordenarCartasPorPoder();
-		Sistema.getInstance().mostrarCartasPoder();
-		
+		VentanaPrincipal ventana = new VentanaPrincipal();
+		ventana.setVisible(true);
 		
 	}
 

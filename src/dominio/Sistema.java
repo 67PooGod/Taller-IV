@@ -86,17 +86,7 @@ public class Sistema {
 	    }
 	}
 	
-	public void mostrarCartas() {
-		for (Carta c : cartas) {
-		 System.out.println(c.toString());
-		}
-	}
-	public void mostrarCartasPoder() {
-		for (Carta c : cartas) {
-		 System.out.println(c.toString());
-		 System.out.println("poder= "+ c.calcularPoder());
-		}
-	}
+	
 
 	
 
