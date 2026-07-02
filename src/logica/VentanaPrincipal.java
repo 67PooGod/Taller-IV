@@ -10,7 +10,7 @@ public class VentanaPrincipal extends JFrame {
     private PanelColeccion panelColeccion;
 
     public VentanaPrincipal() {
-        setTitle("Pokémon TCG - Gestor de Colección");
+        setTitle("pokemon");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -26,8 +26,8 @@ public class VentanaPrincipal extends JFrame {
        
         pestañas.addChangeListener(e -> {
             if (pestañas.getSelectedIndex() == 1) {
-                System.out.println("Cambiando a pestaña Colección. Actualizando vista...");
-                // TODO: Llamar a panelColeccion.actualizarVista() cuando esté lista
+                
+                panelColeccion.actualizarVista();
             }
         });
 

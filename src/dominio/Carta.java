@@ -1,5 +1,7 @@
 package dominio;
 
+import logica.CartaVisitor;
+
 public abstract class Carta {
 	private String nombre;
 	private int rareza;
@@ -16,7 +18,7 @@ public abstract class Carta {
 
 
 
-	public abstract float calcularPoder();
+	
 
 
 
@@ -43,7 +45,11 @@ public abstract class Carta {
 		return rareza;
 	}
 	
-	
+	public abstract float calcularPoder();
+
+			
+	public abstract void aceptar(CartaVisitor visitor);
+
 
 
 	

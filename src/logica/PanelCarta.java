@@ -16,10 +16,11 @@ public class PanelCarta extends JPanel {
         
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        setPreferredSize(new Dimension(140, 200))
+        setPreferredSize(new Dimension(140, 200));
 
      
-        String rutaImagen = "imagenes/" + carta.getNombre() + ".png";
+     
+        String rutaImagen = "tallerIV/ImagenData/" + carta.getNombre() + ".png"; 
         File archivoImagen = new File(rutaImagen);
         ImageIcon iconoOriginal;
 
@@ -27,7 +28,8 @@ public class PanelCarta extends JPanel {
         if (archivoImagen.exists()) {
             iconoOriginal = new ImageIcon(rutaImagen);
         } else {
-            iconoOriginal = new ImageIcon("imagenes/default.png"); // Imagen por defecto
+        
+            iconoOriginal = new ImageIcon("tallerIV/ImagenData/default.png"); 
         }
 
        
@@ -35,6 +37,7 @@ public class PanelCarta extends JPanel {
         JLabel lblImagen = new JLabel(new ImageIcon(imagenEscalada), SwingConstants.CENTER);
         
         add(lblImagen, BorderLayout.CENTER);
+       
       
 
         JLabel lblNombre = new JLabel(carta.getNombre(), SwingConstants.CENTER);

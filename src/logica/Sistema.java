@@ -1,5 +1,5 @@
 package logica;
-
+import dominio.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -87,7 +87,51 @@ public class Sistema {
 	        }
 	    }
 	}
+
+	public void agregarCarta(String nombre, int rareza, String tipo, String extra1, String extra2) {
+		
+		Carta nuevaCarta = CartaFactory.getCarta(nombre, rareza, tipo, extra1, extra2);
+		
+		if (nuevaCarta != null) {
+			cartas.add(nuevaCarta);
+			
+			
+			guardarArchivo();
+		}
+	}
 	
+	public void guardarArchivo() {
+		try {
+			java.io.PrintWriter escritor = new java.io.PrintWriter("Sobres.txt");
+			
+			for (Carta c : cartas) {
+				
+				String linea = c.getNombre() + ";" + c.getRareza() + ";" + c.getTipo();
+				
+				
+				if (c instanceof Pokemon) {
+					Pokemon p = (Pokemon) c;
+					linea += ";" + p.getDamage() + ";" + p.getCantEnergias();
+				} else if (c instanceof Item) {
+					Item i = (Item) c;
+					linea += ";" + i.getBonificacion();
+				} else if (c instanceof Supporter) {
+					Supporter s = (Supporter) c;
+					linea += ";" + s.getEfectosPorTurno();
+				} else if (c instanceof Energy) {
+					Energy e = (Energy) c;
+					linea += ";" + e.getElemento();
+				}
+				
+				escritor.println(linea);
+			}
+			
+			escritor.close();
+		} catch (java.io.FileNotFoundException e) {
+			System.out.println("Error al guardar el archivo: " + e.getMessage());
+		}
+	}
+
 	
 
 	

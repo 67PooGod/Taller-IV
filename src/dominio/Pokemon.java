@@ -1,5 +1,7 @@
 package dominio;
 
+import logica.CartaVisitor;
+
 public class Pokemon extends Carta{
 	
 	
@@ -16,6 +18,16 @@ public class Pokemon extends Carta{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+    public void aceptar(CartaVisitor visitor) {
+        visitor.visit(this);
+    }
+	public int getDamage() {
+		return damage;
+	}
+	public int getCantEnergias() {
+		return cantEnergias;
+	}
 	
 
 }

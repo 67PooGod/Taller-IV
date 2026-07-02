@@ -24,7 +24,11 @@ public class VentanaAmpliacion extends JDialog {
         panelStats.add(new JLabel("Tipo: " + carta.getTipo()));
         panelStats.add(new JLabel("Rareza: " + carta.getRareza()));
         
+        calculosVisitor visitor = new calculosVisitor();
+          
+        carta.aceptar(visitor);
         
+        panelStats.add(new JLabel("Atributos: " + visitor.getTextoDetalles()));
         panelStats.add(new JLabel("Poder: " + carta.calcularPoder()));
 
         add(panelStats, BorderLayout.SOUTH);

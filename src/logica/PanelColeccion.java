@@ -34,30 +34,30 @@ public class PanelColeccion extends JPanel {
 
     private void configurarEventos() {
         btnOrdRareza.addActionListener(e -> {
-            System.out.println("Botón: Ordenar por Rareza");
-            // TODO: Sistema.getInstance().ordenarCartasPorRareza();
-            // TODO: actualizarVista();
+            
+            Sistema.getInstance().ordenarCartasPorRareza();
+            actualizarVista();
         });
 
         btnOrdNombre.addActionListener(e -> {
-            System.out.println("Botón: Ordenar por Nombre");
-            // TODO: Sistema.getInstance().ordenarCartasPorNombre();
-            // TODO: actualizarVista();
+            
+            Sistema.getInstance().ordenarCartasPorNombre();
+           actualizarVista();
         });
 
         btnOrdPoder.addActionListener(e -> {
-            System.out.println("Botón: Ordenar por Poder");
-            // TODO: Sistema.getInstance().ordenarCartasPorPoder();
-            // TODO: actualizarVista();
+           
+            Sistema.getInstance().ordenarCartasPorPoder();
+            actualizarVista();
         });
     }
 
     public void actualizarVista() {
         panelGrilla.removeAll();
-        System.out.println("Dibujando cartas en la grilla...");
+        System.out.println("mostrando cartas");
         
-        // TODO: Recorrer el ArrayList de cartas del Sistema
-        // TODO: Por cada carta, instanciar un new PanelCarta(carta) y agregarlo a panelGrilla
+        // recorrer el ArrayList de cartas del Sistema
+        // por cada carta, instanciar un new PanelCarta(carta) y agregarlo a panelGrilla
 
         panelGrilla.revalidate();
         panelGrilla.repaint();
